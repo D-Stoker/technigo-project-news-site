@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <!-- Change the title below -->
-    <title>News Site</title>
-    <link rel="stylesheet" href="./style.css" />
-    <!-- dont forget the meta tag for responsiveness -->
-  </head>
-  <body>
-    <header>
-      <!-- Some kind of logo and navbar -->
-    </header>
 
-    <section class="big-news">
-      <!-- The big news content -->
-    </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Chicken Run</title>
+  <!-- #1: style your page -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- #3: create responsive design: desktop 4 columns, tablet 2 columns, mobile 1 column (320 - 1600 px)-->
+</head>
 
-    <section class="">
-      <!-- The other news  -->
-    </section>
-  </body>
+<body>
+  <header>
+    <!-- #4a: include header-->
+    <nav>
+      <!-- Always visible items in the nav bar -->
+      <ul>
+        <li>
+          <a href="#">home</a>
+        </li>
+      </ul>
+      <!-- The hamburger menu -->
+      <label for="menu" tabindex="0">Extra</label>
+      <input id="menu" type="checkbox" />
+      <!-- The collapsable menu -->
+      <ul>
+        <li><a href="#">link1</a></li>
+        <li><a href="#">link2</a></li>
+        <li><a href="#">link3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- #4b: include main news article-->
+  <section class="main news article">
+    <div class="hover-O column">
+      <figure><img src="./assets/chicken-hf300.jpg" /></figure>
+    </div>
+  </section>
+
+  <!-- #4c: include grid of smaller news articles-->
+  <section class="other news articles">
+    Other news: TBA.
+  </section>
+</body>
+
 </html>
