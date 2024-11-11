@@ -1,13 +1,10 @@
-# News Site
+# The Daily Tulip
 
-Replace this readme with your own information about the project. You can include things like:
-
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
+- Assignment: created a news site focusing on responsive design, utilizing css grid and css flexbox.
+- Task Approach: (1) startup - the "shotgun approach" to gather ideas, (2) current, refer to (1).
+- Tools used: Visual Studio Code, GitHub, Technigo Toolbox.
+- Planning method: ( TBA. In progress. )
+- If you had more time, what would be next? (TBA. In progress. )
 
 ## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-
-/* Reviewed Github commit/push/pull process, previewed project1 */
+(Coming soon.)
