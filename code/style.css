@@ -1,126 +1,193 @@
-/* #2: use css grid and flexbox to layout the page */
-
+/* Basic Reset */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  max-width: 960px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-figure {
-  width: 300px;
-  height: 200px;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  overflow: hidden;
+/* Grid Container Setup */
+.grid-container {
+    display: grid;
+    grid-gap: 20px;
+    /* Space between grid items */
+    padding: 20px;
 }
 
-figure:hover+span {
-  bottom: -36px;
-  opacity: 1;
+/* Default Grid: Desktop (4 columns) */
+.grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 equal columns */
 }
 
-html {
-  background: #000000;
-  color: #fff;
+/* Tablet Layout (2 columns) */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablet */
+    }
 }
 
-.column div span {
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 300px;
-  margin: 0;
-  padding: 0;
-  color: #444;
-  font-size: 18px;
-  text-decoration: none;
-  text-align: center;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-  opacity: 0;
+/* Mobile Layout (1 column) */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
 }
 
-.hover-O figure img {
-  opacity: 1;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+/* Grid Item Styling */
+.grid-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    margin: 15px;
+    cursor: pointer;
 }
 
-.hover-O figure:hover img {
-  opacity: .5;
+.grid-item img {
+    width: 100%;
+    /* Make the image fill the container */
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    /* Smooth transition for opacity and filter */
 }
 
-nav {
-  background-color: SeaGreen;
-  color: snow;
-  display: flex;
-  justify-content: space-between;
+/* Title styling */
+.article-title {
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 10px;
+    transition: font-weight 0.3s ease;
+    /* Smooth transition for font weight */
 }
 
-nav ul {
-  /* Make the markers disappear */
-  list-style-type: none;
+.grid-item:hover img {
+    filter: opacity(50%);
 }
 
-nav ul li {
-  /* Puts the elements in a single line */
-  display: inline-flex;
-  margin: 0.3em 1em;
+.grid-item:hover .article-title {
+    font-weight: 550;
+    /* Make the title bold on hover */
 }
 
-/* These two lines make the checkbox and the label disappear when we are in desktop mode. */
-nav input[type="checkbox"],
-nav label {
-  display: none;
+.grid-item img {
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
 }
 
-/* This start to get interesting: we go into mobile phone mode */
-@media (max-width: 576px) {
+.grid-item:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-  /* Here is the magic: if the checkbox is not marked, the adjacent list is not displayed */
-  input[type="checkbox"]:not(:checked)+ul {
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Logo */
+header .logo h1 {
+    font-size: 1.8rem;
+}
+
+/* Hamburger Menu (Checkbox Hack) */
+.menu-toggle {
     display: none;
-  }
+    /* Hide the checkbox */
+}
 
-  nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-right: 0;
-  }
+/* Label as the Hamburger Icon */
+.menu-icon {
+    display: none;
+    /* Hide hamburger on large screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
 
-  /* Stlying the menu icon, the checkbox stays hidden */
-  nav label {
-    text-align: right;
-    display: block;
-    padding: 0.5em;
-    line-height: 1.6em;
-    align-self: center;
-  }
-
-  /* Because we are in mobile mode, we want to display it as a vertical list */
-  nav ul {
-    display: block;
-  }
-
-  /* We have two lists: the first one are the always visibile items in the 
-    menu bar. The second one is the one that will be hidden */
-  nav ul:last-child {
+.menu-icon .bar {
+    height: 4px;
     width: 100%;
-    flex-basis: 100%;
-  }
+    background-color: white;
+    border-radius: 2px;
+}
 
-  nav ul li {
-    margin-bottom: 0;
-    width: 100%;
-    text-align: right;
-    padding: 0.5em;
-  }
+/* Menu Styling */
+.menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #555;
+}
+
+/* Mobile View - Hidden Menu */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        /* Hide menu on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Show the hamburger icon on small screens */
+    .menu-icon {
+        display: flex;
+    }
+
+    /* When the checkbox is checked, display the menu */
+    .menu-toggle:checked+.menu-icon+nav .menu {
+        display: flex;
+        /* Show the menu */
+    }
+
+    /* When the checkbox is checked, change hamburger to 'X' */
+    .menu-toggle:checked+.menu-icon .bar:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+
+    .menu-toggle:checked+.menu-icon .bar:nth-child(2) {
+        opacity: 0;
+        /* Hide the middle bar */
+    }
+
+    .menu-toggle:checked+.menu-icon .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
 }
