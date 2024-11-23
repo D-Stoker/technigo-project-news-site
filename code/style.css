@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+/* set up the body and the container */
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+    /* preventing horizontal overflow */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -13,9 +21,13 @@ body {
 /* Grid Container Setup */
 .grid-container {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /*flexible grid */
     grid-gap: 20px;
     /* Space between grid items */
     padding: 20px;
+    max-width: 100%;
+    /* ensuring grid container doesn't overflow horizontally */
 }
 
 /* Default Grid: Desktop (4 columns) */
@@ -45,12 +57,12 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    width: 300px;
+    width: 100%;
     margin: 15px;
     cursor: pointer;
 }
@@ -73,12 +85,11 @@ body {
 }
 
 .grid-item:hover img {
-    filter: opacity(50%);
+    filter: opacity(75%);
 }
 
 .grid-item:hover .article-title {
     font-weight: 550;
-    /* Make the title bold on hover */
 }
 
 .grid-item img {
@@ -160,6 +171,7 @@ header .logo h1 {
         width: 200px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 999;
     }
 
     /* Show the hamburger icon on small screens */
