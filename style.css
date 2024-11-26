@@ -18,22 +18,55 @@ body {
     background-color: #f4f4f4;
 }
 
+figcaption {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 5px solid darkslategray;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+figure {
+    position: relative;
+    display: inline-block;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 /* Grid Container Setup */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /*flexible grid */
+    /* flexible grid */
     grid-gap: 20px;
     /* Space between grid items */
     padding: 20px;
     max-width: 100%;
     /* ensuring grid container doesn't overflow horizontally */
+    overflow: hidden;
 }
 
 /* Default Grid: Desktop (4 columns) */
 .grid-container {
     grid-template-columns: repeat(4, 1fr);
     /* 4 equal columns */
+}
+
+.hero-image {
+    grid-column: span 4;
 }
 
 /* Tablet Layout (2 columns) */
@@ -85,11 +118,7 @@ body {
 }
 
 .grid-item:hover img {
-    filter: opacity(75%);
-}
-
-.grid-item:hover .article-title {
-    font-weight: 550;
+    filter: opacity(85%);
 }
 
 .grid-item img {
