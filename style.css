@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald');
 
 /* Basic Reset */
 * {
@@ -22,6 +22,7 @@ body {
 figure {
     position: relative;
     display: inline-block;
+    text-align: left;
 }
 
 figcaption {
@@ -89,19 +90,26 @@ footer {
     color: white;
 }
 
+.article-title {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 10px;
+    text-align: left;
+}
+
 /* Grid Item Styling */
 .grid-item {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-    text-align: left;
+    text-align: center;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     width: 100%;
     margin: 15px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .grid-item img {
@@ -110,7 +118,7 @@ footer {
 }
 
 .grid-item:hover img {
-    filter: opacity(85%);
+    filter: opacity(75%);
 }
 
 .grid-item:nth-child(even) {
@@ -119,13 +127,6 @@ footer {
 
 .hero-image {
     grid-column: span 4;
-}
-
-.article-title {
-    font-size: 1.2rem;
-    font-weight: normal;
-    text-align: center;
-    margin-top: 10px;
 }
 
 /* Menu Styling */
