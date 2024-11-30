@@ -7,7 +7,38 @@
     box-sizing: border-box;
 }
 
-/* Primary Tags Used */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo {
+    animation-duration: 2s;
+    animation-name: bounceIn;
+}
+
+a:active,
+a:link,
+a:visited {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 body,
 html {
     height: 100%;
@@ -109,7 +140,6 @@ footer {
     overflow: hidden;
     width: 100%;
     margin: 15px;
-    /* cursor: pointer; */
 }
 
 .grid-item img {
