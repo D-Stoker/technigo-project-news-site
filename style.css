@@ -90,15 +90,29 @@ img {
     overflow: hidden;
 }
 
+.hero-image {
+    grid-column: span 4;
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 1024px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-image {
+        grid-column: span 2;
     }
 }
 
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        grid-column: span 1;
     }
 }
 
@@ -154,10 +168,6 @@ footer {
 
 .grid-item:nth-child(even) {
     background-color: #f9f9f9;
-}
-
-.hero-image {
-    grid-column: span 4;
 }
 
 /* Menu Styling */
